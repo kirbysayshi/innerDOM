@@ -4,7 +4,7 @@ innerDOM
 
 A JavaScript Implementation of the [HTML Fragment Serialization Algorithm](http://www.whatwg.org/specs/web-apps/current-work/multipage/the-end.html#serializing-html-fragments).
 
-Compresses to a little under 3K when gzipped. Tested in Chrome 11, but should work in most browsers. Includes an Array.indexOf shim from [es5-shim](https://github.com/kriskowal/es5-shim).
+Compresses to a little over 1K when gzipped. Tested in Chrome 11, but should work in most browsers. Includes an Array.indexOf shim from [es5-shim](https://github.com/kriskowal/es5-shim).
 
 USAGE
 -----
