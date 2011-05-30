@@ -54,7 +54,7 @@
 		,reAMP = /\&(?!amp;|gt;|lt;|quot;|nbsp;)/gi
 		,reLT = /\</gi
 		,reGT = /\>/gi
-		,reNBSP = /\\u00A0/gi
+		,reNBSP = /\u00A0/gi
 		,reQT = /\"/gi
 	
 		,skipChildren = [

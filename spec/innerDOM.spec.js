@@ -74,14 +74,14 @@ describe('innerDOM', function(){
 	it('should serialize an element', function(){
 		
 		var a = document.getElementById('test-a');
-		expect( innerDOM._traceElement(a) ).toEqual( '<a href="#" data-what="how" id="test-a">an a tag.</a>' );
+		expect( innerDOM._traceElement(a) ).toEqual( '<a href="#" data-what="how" id="test-a">an a tag, with a <span>span tag<span>&nbsp;</span>inside</span>.</a>' );
 		
 	});
 	
 	it('should serialize children', function(){
 	
 		var p = document.getElementById('test-p')
-			,expected = 'This is a paragraph tag, followed by <a href="#" data-what="how" id="test-a">an a tag.</a>';
+			,expected = 'This is a paragraph tag,&nbsp;followed by <a href="#" data-what="how" id="test-a">an a tag, with a <span>span tag<span>&nbsp;</span>inside</span>.</a>';
 		
 		expect( innerDOM.serializeInnerDom(p) ).toEqual(expected);
 		
@@ -90,7 +90,7 @@ describe('innerDOM', function(){
 	it('should serialize children and itself', function(){
 	
 		var p = document.getElementById('test-p')
-			,expected = '<p id="test-p" class="hideMe">This is a paragraph tag, followed by <a href="#" data-what="how" id="test-a">an a tag.</a></p>';
+			,expected = '<p id="test-p" class="hideMe">This is a paragraph tag,&nbsp;followed by <a href="#" data-what="how" id="test-a">an a tag, with a <span>span tag<span>&nbsp;</span>inside</span>.</a></p>';
 		
 		expect( innerDOM.serializeOuterDom(p) ).toEqual(expected);
 		
