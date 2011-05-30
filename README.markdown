@@ -2,9 +2,14 @@
 innerDOM
 ========
 
-A JavaScript Implementation of the [HTML Fragment Serialization Algorithm](http://www.whatwg.org/specs/web-apps/current-work/multipage/the-end.html#serializing-html-fragments).
+A JavaScript Implementation of the [HTML5 Fragment Serialization Algorithm](http://www.whatwg.org/specs/web-apps/current-work/multipage/the-end.html#serializing-html-fragments).
 
-Compresses to a little over 1K when gzipped. Tested in Chrome 11, but should work in most browsers. Includes an Array.indexOf shim from [es5-shim](https://github.com/kriskowal/es5-shim).
+Compresses to a little over 1K when gzipped. Tested in Chrome 11 and IE8, but should work in most browsers. Includes an Array.indexOf shim from [es5-shim](https://github.com/kriskowal/es5-shim).
+
+WHY?
+----
+
+Sometimes innerHTML just isn't enough! InnerHTML tends to give you the unnormalized HTML contents, and not the browser-corrected version. The other reason is for cross-browser normalization. Internet Explorer, for example, gives you all uppercased versions of the tags instead of their proper HTML5 lowercased versions. This script will take care of that normalization for you (to an extent).
 
 USAGE
 -----
@@ -27,6 +32,11 @@ USAGE
 	console.log(outer);
 	// outputs:
 	//	<p id="test-p" class="hideMe">This is a paragraph tag, followed by <a href="#" data-what="how" id="test-a">an a tag.</a></p>
+
+CAVEATS
+-------
+
+The order of attributes might vary from browser to browser, and this does nothing to compensate for that. As long as the attributes are there, innerDOM will serialize them, but they might not come out in the same order cross-browser.
 		
 LICENSE
 -------
