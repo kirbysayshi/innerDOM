@@ -22,6 +22,8 @@
 */
 
 // 
+// Version: 0.1
+//
 // JavaScript Implementation of the HTML Fragment Serialization Algorithm:
 // http://www.whatwg.org/specs/web-apps/current-work/multipage/the-end.html#serializing-html-fragments
 //
@@ -31,7 +33,7 @@
 // Exports innerDOM namespace, containing two main methods: 
 // serializeInnerDom and serializeOuterDom.
 // 
-// returns a string of the serialized inner children or serialized node
+// Returns a string of the serialized inner children or serialized node
 // including its children, respectively.
 // 
 
