@@ -22,7 +22,7 @@
 */
 
 // 
-// Version: 0.1
+// Version: 0.1.1
 //
 // JavaScript Implementation of the HTML Fragment Serialization Algorithm:
 // http://www.whatwg.org/specs/web-apps/current-work/multipage/the-end.html#serializing-html-fragments
