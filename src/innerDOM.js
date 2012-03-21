@@ -289,3 +289,33 @@
 	? exports
 	: (window.innerDOM = {})
 );
+
+(function(){
+
+/*!
+Copyright (c) 2009, 280 North Inc. http://280north.com/
+MIT License. http://github.com/280north/narwhal/blob/master/README.md
+*/
+
+// ES5 15.4.4.14
+if (!Array.prototype.indexOf) {
+    Array.prototype.indexOf = function indexOf(value /*, fromIndex */ ) {
+        var length = this.length;
+        if (!length)
+            return -1;
+        var i = arguments[1] || 0;
+        if (i >= length)
+            return -1;
+        if (i < 0)
+            i += length;
+        for (; i < length; i++) {
+            if (!owns(this, i))
+                continue;
+            if (value === this[i])
+                return i;
+        }
+        return -1;
+    };
+}
+
+})();
