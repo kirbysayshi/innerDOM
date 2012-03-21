@@ -285,11 +285,9 @@
 	exports.serializeOuterDom = serializeOuterDom;
 	
 })(	
-	typeof(exports) === "undefined"
-	? (typeof(innerDOM) === "undefined" 
-		? innerDOM = {} 
-		: innerDOM) 
-	: exports
+	typeof(window) === "undefined"
+	? exports
+	: (window.innerDOM = {})
 );
 
 
